@@ -1,0 +1,108 @@
+section {
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(
+        to right bottom,
+        #400f8f8f,
+        #0e0d0df1),
+        url(/public/img/background.jpg);
+    background-size: cover;
+    background-position: top;
+    position: relative;
+
+    animation-name: MoveInTop;
+    animation-duration: 3s;
+    animation-timing-function: ease-in;
+
+    .text-box {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        text-align: center;
+        transform: translate(-50px, -50px);
+
+        @include breakpoint(large) {
+            top:30%;
+           left: 20%;
+        }
+    }
+
+    .heading-primary {
+        text-align: center;
+        color: $grey-white-color;
+        backface-visibility: hidden;
+        margin-bottom: 60px;
+
+        &-main {
+            display: block;
+            font-size: 60px;
+            font-weight: 100;
+            letter-spacing: 2px;
+            animation-name: MoveInLeft;
+            animation-duration: 1s;
+            animation-timing-function: ease-in;
+        }
+
+        &-sub {
+            display: block;
+            font-size: 60px;
+            font-weight: 900;
+            letter-spacing: 4px;
+            animation-name: MoveInRight;
+            animation-duration: 4s;
+            animation-timing-function: ease-in-out;
+        }
+
+        &-try {
+            display: block;
+            font-size:25px;
+            font-weight: 100;
+            animation-name: MoveInTop;
+            animation-duration: 7s;
+            animation-timing-function: ease-in;
+        }
+    }
+
+    @keyframes MoveInLeft{
+        0%{
+            opacity: 0;
+            transform: translate(-500px);
+        }
+        80%{
+            transform: translate(20px);
+        }
+        100%{
+            opacity: 1;
+            transform: translate(0);
+        }
+    }
+    
+    @keyframes MoveInRight{
+        0%{
+            opacity: 0;
+            transform: translate(100px);
+        }
+        80%{
+            transform: translate(-20px);
+        }
+        100%{
+            opacity: 1;
+            transform: translate(0);
+        }
+    }
+    
+    @keyframes MoveInTop{
+        0%{
+            opacity: 0;
+            transform: translateY(-100px);
+        }
+        80%{
+            opacity: 0.1;
+            transform: translateZ(20px);
+        }
+        100%{
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}

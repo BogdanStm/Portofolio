@@ -1,0 +1,155 @@
+header {
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(
+        to right bottom,
+        #400f8f8f,
+        #0e0d0df1),
+        url(/public/img/1.jpeg),;
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    opacity: 0.9;
+    animation-name: MoveInTop;
+    animation-duration: 3s;
+    animation-timing-function: ease-in;
+
+    .text-box {
+        position: absolute;
+        top: 27%;
+        left: 13%;
+        text-align: center;
+        transform: translate(-50px, -50px);
+
+        @include breakpoint(extra-large) {
+            top:27%;
+           left: 8%;
+
+        }
+
+        @include breakpoint(large) {
+            top:10%;
+           left: 25%;
+
+        }
+        
+    }
+    .heading-primary {
+        text-align: center;
+        color: #fff;
+        backface-visibility: hidden;
+        margin-bottom: 60px;
+
+        
+
+        &-main {
+            display: block;
+            font-size: 50px;
+            font-weight: 100;
+            letter-spacing: 2px;
+            animation-name: MoveInLeft;
+            animation-duration: 1s;
+            animation-timing-function: ease-in;
+
+            @include breakpoint(extra-large) {
+                font-size: 50px;
+            }
+        }
+
+        &-sub {
+            display: block;
+            font-size: 30px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            animation-name: MoveInRight;
+            animation-duration: 4s;
+            animation-timing-function: ease-in-out;
+            margin-top: 50px;
+
+            @include breakpoint(extra-large) {
+                margin-top: 30px;
+               
+            }
+        }
+
+        &-try {
+            display: block;
+            font-size:20px;
+            margin-top: 27px;
+            animation-name: MoveInTop;
+            animation-duration: 7s;
+            animation-timing-function: ease-in;
+            padding-top: 70px;
+
+            @include breakpoint(extra-large) {
+                padding-top: 20px;
+               
+            }
+
+            .cv {
+                text-align: center;
+                font-size: 20px;
+                margin-left: 680px;
+                padding-top: 2px;
+                width: 50px;
+                height: 25px;
+                background: #05FDD8;
+                border-radius: 25%;
+
+                @include breakpoint(extra-large) {
+                    margin-left: 540px; 
+                }
+
+                a{
+                    text-decoration: none;
+                color: #fff;
+                }
+            }
+        }
+
+      
+    }
+
+    @keyframes MoveInLeft{
+        0%{
+            opacity: 0;
+            transform: translate(-500px);
+        }
+        80%{
+            transform: translate(20px);
+        }
+        100%{
+            opacity: 1;
+            transform: translate(0);
+        }
+    }
+    
+    @keyframes MoveInRight{
+        0%{
+            opacity: 0;
+            transform: translate(100px);
+        }
+        80%{
+            transform: translate(-20px);
+        }
+        100%{
+            opacity: 1;
+            transform: translate(0);
+        }
+    }
+    
+    @keyframes MoveInTop{
+        0%{
+            opacity: 0;
+            transform: translateY(-100px);
+        }
+        80%{
+            opacity: 0.1;
+            transform: translateZ(20px);
+        }
+        100%{
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}

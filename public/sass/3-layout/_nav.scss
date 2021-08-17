@@ -1,0 +1,126 @@
+nav {
+    height: 100vh;
+    width: 130px;
+    background-color: $nav-black;
+    color: $nav-font-color;
+    margin-bottom: auto;
+    margin-top: auto;
+
+    animation-name: MoveInTop;
+            animation-duration: 3.5s;
+            animation-timing-function: ease-in;
+    
+
+    @include breakpoint(medium) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav_container {    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &-desc {
+            height: 200px;
+            background-color: #3D2162;
+
+            &-img {
+                .img {
+                border-radius: 15%;
+                width: 130px;
+                object-fit: cover;
+                opacity: 0.8;
+                }
+            }
+
+            &-name {
+                margin-top: 10px;
+                font-size: 20px;
+                text-align: center;
+
+                a {
+                    text-decoration: none;
+                    color: $nav-font-color;
+                }
+            }
+        }
+
+        &-list {
+           padding-top: 100px;
+           font-size: 20px; 
+           text-align: center;
+
+            li{
+            width: 130px;
+            margin-top: 50px;
+            list-style: none;
+            padding-top: 10px;
+            padding-bottom: 10px;
+
+            }
+
+            a{
+                text-decoration: none;
+                color: $nav-font-color;
+            }
+
+            a:hover {
+                animation-name: MoveInLeft;
+                animation-duration: 2s;
+                animation-timing-function: ease-in;
+                color: #05FDD8;
+            }
+
+            #lista {
+                border-bottom: 1px solid #282828;
+                border-top: 1px solid #282828;
+            }
+
+            @include breakpoint(extra-large) {
+                padding-top: 20px;
+                li{
+                    margin-top: 30px;
+                }
+            }
+
+
+            @include breakpoint(large) {
+                padding-top: 0px;
+                li{
+                    margin-top: 30px;
+                }
+            }
+        }
+
+        &-contact {
+            width: 110px;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 250px;
+
+            @include breakpoint(extra-large) {
+                margin-top: 110px;
+            }
+            
+            @include breakpoint(large) {
+                margin-top: 110px;
+            }
+
+            a{  
+                text-decoration: none;
+                color: $nav-font-color;
+                font-size: 25px;
+            }
+
+            a:hover {
+                color: #05FDD8;
+            
+            }
+        }
+
+    }
+    
+}
+
